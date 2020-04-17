@@ -1,0 +1,329 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0 16px;
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+}
+
+button{
+  background-color: transparent;
+}
+header {
+  background-color: #fdc152;
+  margin: auto -16px;
+  /*height:80px;*/
+  padding: 12px 32px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+  color: #ffffff;
+  /*font-family: "McLaren", cursive;*/
+  /*font-weight: 300;*/
+  font-family: 'Bangers', cursive;
+
+}
+
+footer {
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+}
+
+footer p {
+  color: #ccc;
+}
+.note {
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 10px;
+  width: 240px;
+  margin: 16px;
+  float: left;
+}
+.note h1 {
+  font-family: 'Lilita One', cursive;
+  font-size: 1.1em;
+  margin-bottom: 6px;
+}
+.note p {
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+
+.note button {
+  position: relative;
+  float: right;
+  margin-right: 0;
+  color: #f5ba13;
+  border: none;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  outline: none;
+}
+
+form.create-note {
+  position: relative;
+  width: 480px;
+  margin: 30px auto 20px auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px rgb(138, 137, 137);
+}
+form.create-note input,
+form.create-note textarea {
+  width: 100%;
+  border: none;
+  padding: 4px;
+  outline: none;
+  font-size: 1.2em;
+  font-family: inherit;
+  resize: none;
+}
+
+form.create-note input{
+  font-family: 'Lilita One', cursive;
+}
+
+form.create-note textarea{
+  font-family: 'Indie Flower', cursive;
+}
+
+form.create-note button {
+  position: absolute;
+  right: 18px;
+  bottom: -18px;
+  background: #f5ba13;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  outline: none;
+}
+
+.highlight{
+  position: relative;
+  top:16px;
+  /*right:-5px;*/
+}
+
+#cancelIcon{
+  top: -15px;
+  right: -15px;
+}
+
+.dropdown{
+  position: absolute;
+  right:0;
+  top:82px;
+
+}
+
+.deleteAll{
+  text-align: center;
+  font-weight: 900;
+  font-size:1.1rem;
+  cursor: pointer;
+}
+
+.show{
+  padding: 0;
+  margin-top:1px;
+  border-top-width:4px;
+  border-color: #bd2130;
+  /*border-color:#ff5722;*/
+}
+
+.dropdown-menu{
+  min-width: 9.25rem;
+}
+
+#dropdownMenuButton{
+  cursor: pointer;
+}
+
+.register{
+  display: block;
+  margin: auto;
+}
+.goToRegister{
+  display: block;
+  margin: auto;
+}
+.loginRegisterButton{
+  display: block;
+  margin: 30px auto 0;
+  width:100px;
+}
+
+.container{
+  width: 40%;
+}
+
+#email{
+  font-family: 'Lilita One', cursive;
+  /*text-align: center;*/
+  font-size:1.1rem;
+}
+
+#password{
+  font-family: 'Lilita One', cursive;
+  /*text-align: center;*/
+  font-size:1.1rem;
+}
+
+#login-header{
+  text-align: center;
+  color: black;
+  font-size: 2rem;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+#login-subHeader{
+  text-align: center;
+  color: black;
+  font-size: 1rem;
+  font-family: 'Montserrat Alternates', sans-serif;
+
+}
+
+.input-invalid{
+  color:#dd4b39;
+  font-size: 0.7rem;
+  margin-top: 0;
+}
+
+.input-valid{
+  color:green;
+  font-size: 0.7rem;
+  margin-top: 0;
+}
+
+.username-field{
+  margin-bottom: 0;
+}
+
+#LogoutButton{
+  margin-bottom: 10px;
+  font-size: 0.7rem;
+ }
+
+#copyRights{
+  margin-bottom: 0;
+}
+
+#login-error{
+  color:#dd4b39;
+  font-size: 0.9rem;
+}
+
+#login-error{
+  text-align: center;
+  margin-bottom: -5px;
+}
+
+.valid{
+  position: relative;
+  color: green;
+  top:-28px;
+  left:-17px;
+}
+
+.login-form{
+  margin-bottom: 10px;
+}
+
+.reg-form{
+  margin-bottom: 2px;
+}
+
+.password-field{
+  width: 100%;
+}
+
+.errorIcon{
+  position: relative;
+  font-size: 5px;
+  top:3px;
+}
+
+.fa-google{
+  position: relative;
+  color: white;
+  font-size: 1.3rem;
+  bottom: 30px;
+  left: 10px;
+}
+
+.btn-my-google{
+  /*margin-top: 10px;*/
+  /*width: 455px;*/
+}
+
+.googleSign{
+  margin-top: 5px;
+  background-color: #dd4b39f2;
+  box-shadow: #dd4b39f2;
+  border-width: 2px;
+
+}
+
+
+.signInButton{
+  background-color: white;
+  /*height: 2rem;*/
+  margin-top: 4px;
+}
+
+.signInButton div{
+  /*background-color: #dd4b39;*/
+  /*height: 2rem;*/
+  margin-top: 3px;
+}
+
+.signInButton span {
+  background-color: white;
+  text-align: center;
+  width: 86%;
+  margin-right: 7%;
+  /*margin-left: 32%;*/
+  font-size: 1.1rem;
+}
+
+.firstName{
+  display: inline-block;
+  width:40%
+}
+
+.lastName{
+  display: inline-block;
+  width:40%
+}
+
+.form-control{
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+#welcome{
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: 700;
+  font-size:1.5rem;
+  text-align: center;
+  margin-top: 20px;
+}
