@@ -25,10 +25,7 @@ function Home() {
     async function validateUser(){
         console.log("Entered Validation");
         await apisUser.login(user)
-            .then( () => {
-                apisUser.authenticate().then( res => {
-                    console.log(res.data)});
-                setAccess(true)})
+            .then( () => {setAccess(true)})
             .catch(()=> setComment(true));
     }
 

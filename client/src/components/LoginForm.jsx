@@ -57,7 +57,7 @@ function LoginForm(props) {
                    type="email"
                    placeholder="username"
                    name="username"
-                   autoComplete="off" />
+                   autoComplete="on" />
             {!props.login && (!props.validEmail
                 ? <p className="input-invalid"><ErrorIcon style={styleError}  />email is not valid</p>:
                 <CheckIcon className="valid" style={{ fontSize: 15 }}/>)}
@@ -72,7 +72,7 @@ function LoginForm(props) {
                            type={visibility? "text": "password"}
                            name="password"
                            placeholder="password"
-                           autoComplete="off"/>
+                           autoComplete="on"/>
 
                     {!props.login && (!props.validPassword
                         ?<p className="input-invalid"><ErrorIcon style={styleError} /> At least 8 characters</p>
