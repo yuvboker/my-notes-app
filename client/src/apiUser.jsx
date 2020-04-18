@@ -4,7 +4,7 @@ const tough = require('tough-cookie');
 const axiosCookieJarSupport = require('axios-cookiejar-support')
 
 const api = axios.create({
-    baseURL: 'http://localhost:3000/',
+    baseURL: 'https://save-time-note-app.herokuapp.com',
     withCredentials:true
 })
 
