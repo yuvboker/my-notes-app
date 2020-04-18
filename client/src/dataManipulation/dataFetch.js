@@ -13,7 +13,7 @@ const dataFetchReducer = (state, action) =>{
             };
         case 'FETCH_SUCCESS':
             return{
-                firstName: action.payload.firstname,
+                firstName: action.payload.firstName,
                 notes: action.payload.notes,
                 isLoading: false,
                 isError: false

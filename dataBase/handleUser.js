@@ -7,9 +7,9 @@ const findOrCreate= require('mongoose-findorcreate');
 
 createOrFind = async (req,res) => {
     const googleId = req.body.googleId;
-    const firstname = req.body.firstname;
-    const lastname = req.body.lastname;
-    await User.findOrCreate({ username: googleId},{firstname: firstname, lastname: lastname}, function (err, user) {
+    const firstName = req.body.firstName;
+    const lastName = req.body.lastName;
+    await User.findOrCreate({ username: googleId},{firstName: firstName, lastName: lastName}, function (err, user) {
         return res.status(200).json({success: true});
     })
 };
@@ -31,7 +31,11 @@ getUsers = async (req, res) => {
 }
 
 createUser = async (req, res, next) => {
-    User.register(new User({username:req.body.username}), req.body.password, (err, user) =>{
+    const password = req.body.password;
+    const firstName = req.body.firstName;
+    const lastName = req.body.lastName;
+    const username = req.body.username;
+    User.register(new User({username:username, firstName:firstName, lastName:lastName}),password, (err, user) =>{
             if(err){
                 return res.status(500).send({ message : err.name });
             }

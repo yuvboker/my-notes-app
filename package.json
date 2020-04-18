@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node -r dotenv ./bin/www",
-    "heroku-prebuild": "export NPM_CONFIG_PRODUCTION=false; export NODE_ENV=; NPM_CONFIG_PRODUCTION=false NODE_ENV=development npm install --only=dev --dev",
-    "heroku-postbuild": "export NPM_CONFIG_PRODUCTION=true; export NODE_ENV=production; cd client && npm install && npm run build"
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "dependencies": {
     "@types/express": "^4.17.6",
@@ -25,6 +24,7 @@
     "mongoose": "^5.9.7",
     "mongoose-findorcreate": "^3.0.0",
     "morgan": "~1.9.1",
+    "nodemon": "^2.0.3",
     "passport": "^0.4.1",
     "passport-google-oauth2": "^0.2.0",
     "passport-google-oauth20": "^2.0.0",

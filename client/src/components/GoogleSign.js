@@ -14,7 +14,7 @@ function GoogleSign(){
 
     const responseGoogle = async (response) => {
         const profile = response.Qt;
-        const user = {googleId:profile.ZU, firstname:profile.DW, lastname:profile.DU};
+        const user = {googleId:profile.ZU, firstName:profile.DW, lastName:profile.DU};
         // console.log(user);
         await apisUser.findOrCreate(user).catch(err => console.log(err));
         setGoogleId(user.googleId);

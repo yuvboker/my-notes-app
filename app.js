@@ -12,6 +12,7 @@ const session = require('express-session');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const MongoStore = require('connect-mongo')(session);
 
 
 const app = express();
@@ -31,6 +32,12 @@ app.use(cors({
   credentials: true // enable set cookie
 }));
 
+const options = {useUnifiedTopology:true, useNewUrlParser:true, useFindAndModify: false };
+const url = "mongodb+srv://admin-Yuval:" + process.env.MONGOOSE_PASSWORD +"@cluster0-8qshu.mongodb.net/usersDB";
+
+mongoose.connect(url, options);
+mongoose.set("useCreateIndex", true);
+
 app.use(session({
   secret: 'This is a secret',
   cookie: {
@@ -38,7 +45,9 @@ app.use(session({
     maxAge: 1000 * 60 * 60 * 24 * 7 // 1 week
   },
   resave: false,
-  saveUninitialized: false
+  store: new MongoStore({ mongooseConnection: mongoose.connection}),
+  saveUninitialized: false,
+  unset: 'destroy'
 }));
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -77,26 +86,18 @@ passport.use(new GoogleStrategy({
 ));
 
 
-const options = {useUnifiedTopology:true, useNewUrlParser:true, useFindAndModify: false };
-const url = "mongodb+srv://admin-Yuval:" + process.env.MONGOOSE_PASSWORD +"@cluster0-8qshu.mongodb.net/usersDB";
-
-mongoose.connect(url, options);
-mongoose.set("useCreateIndex", true);
 
 
 app.use('/', require('./routes/index'));
 
 
 if(process.env.NODE_ENV === 'production'){
-
     app.use(express.static('./client/build'));
 
-    app.res('*', (req, res) => {
+    app.get('*', (req, res) => {
         res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
     })
 }
-
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
