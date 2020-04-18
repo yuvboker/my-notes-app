@@ -95,9 +95,7 @@ if(process.env.NODE_ENV === 'production'){
         res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
     })
 }
-else{
-    console.log("SKIPPPPPPPPPPPPPEEEEEEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD")
-}
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

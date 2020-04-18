@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node -r dotenv ./bin/www",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "heroku-prebuild": "export NPM_CONFIG_PRODUCTION=false; export NODE_ENV=; NPM_CONFIG_PRODUCTION=false NODE_ENV=development npm install --only=dev --dev",
+    "heroku-postbuild": "export NPM_CONFIG_PRODUCTION=true; export NODE_ENV=production; cd client && npm install && npm run build"
   },
   "dependencies": {
     "@types/express": "^4.17.6",
