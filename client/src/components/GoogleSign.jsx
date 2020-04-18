@@ -36,7 +36,7 @@ function GoogleSign(){
                         onFailure={responseGoogle}
                         className="signInButton"
                         cookiePolicy={'single_host_origin'}
-                        isSignedIn={true}
+                        isSignedIn={false}
                     />
         </div>
     </div>)
