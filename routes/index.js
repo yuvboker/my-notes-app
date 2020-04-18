@@ -7,7 +7,7 @@ const noteHandler = require('../dataBase/handleNotes');
 router.route('/auth/google')
     .post(userHandler.createOrFind);
 
-router.route('/logout')
+router.route('/logoutRequest')
     .get(userHandler.logout);
 
 router.route('/login')
@@ -16,16 +16,16 @@ router.route('/login')
 router.route('/register')
     .post(userHandler.createUser)
 
-router.route('/')
+router.route('/authenticate')
     .get(userHandler.getUser)
     .delete(userHandler.deleteUsers);
 
-router.route('/:user/notes')
+router.route('/:user/myNotes')
     .get(noteHandler.getNotes)
     .post(noteHandler.createNote)
     .delete(noteHandler.deleteNotes);
 
-router.route('/:user/notes/:id')
+router.route('/:user/myNotes/:id')
     .get(noteHandler.getNoteByID)
     .put(noteHandler.updateNoteByID)
     .delete(noteHandler.deleteNoteByID);

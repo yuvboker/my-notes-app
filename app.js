@@ -85,9 +85,6 @@ passport.use(new GoogleStrategy({
     }
 ));
 
-
-
-
 app.use('/', require('./routes/index'));
 
 

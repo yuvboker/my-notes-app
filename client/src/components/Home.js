@@ -23,6 +23,7 @@ function Home() {
     useEffect(()=>{},[access, moveToReg]);
 
     async function validateUser(){
+        console.log("Entered Validation");
         await apisUser.login(user)
             .then( () => {
                 apisUser.authenticate().then( res => {
@@ -38,7 +39,7 @@ function Home() {
     return (
         <div className="container mt-5">
             {access && <Redirect to={{
-                pathname: user.username + '/notes'
+                pathname: '/' + user.username + '/notes'
             }}
             />}
             {moveToReg && <Redirect to={{

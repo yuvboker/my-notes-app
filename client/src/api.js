@@ -11,12 +11,12 @@ const api = axios.create({
 axiosCookieJarSupport(api);
 api.defaults.jar = new tough.CookieJar();
 
-export const add = (username, note) => api.post( username + '/notes', note).then(res => res.data);
-export const getAll = (username) => api.get(username + '/notes');
-export const deleteAll = (username) => api.delete( username + '/notes');
-export const updateByID = (username, id, note) => api.put(username + '/notes/' + id, note);
-export const deleteByID = (username, id) => api.delete(username + '/notes/' + id);
-export const getByID = (username, id) => api.get(username + '/notes/'+ id);
+export const add = (username, note) => api.post( username + '/myNotes', note).then(res => res.data);
+export const getAll = (username) => api.get(username + '/myNotes');
+export const deleteAll = (username) => api.delete( username + '/myNotes');
+export const updateByID = (username, id, note) => api.put(username + '/myNotes/' + id, note);
+export const deleteByID = (username, id) => api.delete(username + '/myNotes/' + id);
+export const getByID = (username, id) => api.get(username + '/myNotes/'+ id);
 
 const apis = {
     add,
