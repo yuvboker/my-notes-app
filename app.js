@@ -88,12 +88,15 @@ app.use('/', require('./routes/index'));
 
 
 if(process.env.NODE_ENV === 'production'){
+
     app.use(express.static('./client/build'));
 
     app.res('*', (req, res) => {
         res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
     })
-
+}
+else{
+    console.log("SKIPPPPPPPPPPPPPEEEEEEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD")
 }
 
 // catch 404 and forward to error handler
