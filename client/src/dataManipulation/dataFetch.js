@@ -44,18 +44,18 @@ const useDataApi = (initialData, user, googleId) => {
     useEffect( () => {
         let didCancel = false;
 
-        if(!googleId) {
-        const authenticationCheck = async () => await apisUser.authenticate();
-            authenticationCheck().then(result => {
-                if (!result.data.success) {
-                    setValid(false);
-                }
-
-            }).catch(() => setValid(false));
-        }
-        else{
-            user = googleId;
-        }
+        // if(!googleId) {
+        //     const authenticationCheck = async () => await apisUser.authenticate();
+        //         authenticationCheck().then(result => {
+        //             if (!result.data.success) {
+        //                 setValid(false);
+        //             }
+        //
+        //         }).catch(() => setValid(false));
+        // }
+        // else{
+        //     user = googleId;
+        // }
 
         const fetchData = async () => {
             dispatch({type: 'FETCH_INIT'});
