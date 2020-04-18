@@ -22,6 +22,10 @@ function GoogleSign(){
 
     }
 
+    const responseFailGoogle = () => {
+        console.log("Failed to log in");
+    }
+
     return (
     <div>
         {toNotes && <Redirect to={{
@@ -33,7 +37,7 @@ function GoogleSign(){
                         clientId="222790049033-k8egh5h43tjr57cartngk7nch94c1gsj.apps.googleusercontent.com"
                         buttonText="Sign in with google"
                         onSuccess={responseGoogle}
-                        onFailure={responseGoogle}
+                        onFailure={responseFailGoogle}
                         className="signInButton"
                         cookiePolicy={'single_host_origin'}
                         isSignedIn={false}
