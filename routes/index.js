@@ -7,6 +7,9 @@ const noteHandler = require('../dataBase/handleNotes');
 router.route('/auth/google')
     .post(userHandler.createOrFind);
 
+router.route('/auth/google')
+    .post(userHandler.createOrFind);
+
 router.route('/logoutRequest')
     .get(userHandler.logout);
 

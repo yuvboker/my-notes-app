@@ -13,13 +13,13 @@ function GoogleSign(){
     useEffect(()=>{},[toNotes]);
 
     const responseGoogle = async (response) => {
-        console.log(respone);
         const profile = response.Qt;
         const user = {googleId:profile.ZU, firstName:profile.DW, lastName:profile.DU};
         // console.log(user);
         await apisUser.findOrCreate(user).catch(err => console.log(err));
         setGoogleId(user.googleId);
-        // setNotes(true);
+        setNotes(true);
+
     }
 
     return (
@@ -36,7 +36,7 @@ function GoogleSign(){
                         onFailure={responseGoogle}
                         className="signInButton"
                         cookiePolicy={'single_host_origin'}
-                        isSignedIn={off}
+                        isSignedIn={true}
                     />
         </div>
     </div>)
