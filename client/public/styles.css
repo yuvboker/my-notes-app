@@ -280,8 +280,7 @@ form.create-note button {
   margin-top: 5px;
   background-color: #dd4b39f2;
   box-shadow: #dd4b39f2;
-  border-width: 2px;
-
+  border-width: 1px 0 0 0;
 }
 
 
